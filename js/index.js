@@ -5,11 +5,13 @@ const app = {
     },
     init: function() {
         // Je stocke le container pour le réutiliser dans toutes mes méthodes :
-        app.containerElement = document.getElementById('app');
+        app.containerElement = document.querySelector('.container');
+        console.log(app.containerElement);
+
         // Je créé ma box de notation :
         app.createRatingBox();
         // et de remerciement :
-        // app.createThankYouBox();
+        app.createThankYouBox();
     },
 
     createRatingBox: function() {
@@ -60,20 +62,8 @@ const app = {
         button.addEventListener('click', app.handleSubmit);
     },
 
-    handleNoteSelected: function(e) {
-        app.state.noteSelected = e.target.value;
-        const allNote = document.querySelectorAll('.rating-box-rating-note');
-        allNote.forEach(el => {
-            el.style.background = '#262F39';
-            el.style.color = '#959eac';
-        })
-        const noteBG = document.getElementById(`note-${e.target.value}`);
-        noteBG.style.background = '#7c8798';
-        noteBG.style.color = 'white';
-    },
-
+    
     createThankYouBox: function() {
-        console.log('TY');
         const tyBox = app.configureElement('section', app.containerElement, {
             className: 'tyBox',
         });
@@ -95,6 +85,18 @@ const app = {
             textContent: 'We appreciate you taking the time to give a rating. If you ever need more support, don’t hesitate to get in touch!'
         })
     },
+    
+    handleNoteSelected: function(e) {
+        app.state.noteSelected = e.target.value;
+        const allNote = document.querySelectorAll('.rating-box-rating-note');
+        allNote.forEach(el => {
+            el.style.background = '#262F39';
+            el.style.color = '#959eac';
+        })
+        const noteBG = document.getElementById(`note-${e.target.value}`);
+        noteBG.style.background = '#7c8798';
+        noteBG.style.color = 'white';
+    },
 
     handleSubmit: function(e) {
         // Si aucune note n'est sélectionné, on lance une alerte :
@@ -102,7 +104,7 @@ const app = {
             const box = document.querySelector('.rating-box');
             box.style.display = 'none';
             const tyBoxBlock = document.querySelector('.tyBox');
-            tyBoxBlock.style.display = 'block';
+            tyBoxBlock.style.display = 'flex';
             const tyBoxResult = document.querySelector('.tyBox-result');
             tyBoxResult.textContent = `You selected ${app.state.noteSelected} out of ${app.state.notes.length}`;
         }
@@ -119,6 +121,8 @@ const app = {
         parent.appendChild(elem);
         // Je change les attributs de mon élément avec l'objet reçu en 3ème argument.
         for (const property in attrs) {
+            // Ca revient à faire
+            // div.className = monObjet.className (donc la valeur de className) 
             elem[property] = attrs[property];
         };
         return elem;

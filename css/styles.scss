@@ -7,22 +7,24 @@ $button-bg: #fb7413;
 $title-color: #ffffff;
 $text-color: #959eac;
 
+body {
+    font-family: 'Overpass', sans-serif;
+}
 
 #app {
     display: flex;
+    flex-wrap: wrap;
     align-items: center;
     justify-content: center;
-    margin: auto;
     min-height: 550px;
     min-width: 450px;
     background-color: $primary-bg;
-    font-family: 'Overpass', sans-serif;
 }
 
 .rating-box {
     box-sizing: border-box;
     padding: 25px;
-    min-width: 375px;
+    width: 375px;
     height: auto;
     border-radius: 25px;
     background-color: $box-bg;
@@ -96,24 +98,46 @@ $text-color: #959eac;
 }
 
 .tyBox {
-    display: flex;
     justify-content: center;
+    align-items: center;
     flex-direction: column;
     box-sizing: border-box;
     padding: 25px;
-    min-width: 375px;
+    width: 375px;
     height: auto;
     border-radius: 25px;
     background-color: $box-bg;
     color: $text-color;
 
+    &-logo {
+        margin-bottom: 25px;
+    }
+
     &-result {
-        height: 25px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 40px;
+        padding: 0 10px 0 10px;
+        margin-bottom: 35px;
+        border-radius: 25px;
+        vertical-align: middle;
         background-color: $div-bg;
+        color: $button-bg;
     }
 
     &-titleTY {
+        margin-bottom: 20px;
         text-transform: capitalize;
+        color: $title-color;
+        font-weight: 700;
+        font-size: 25px;
+    }
+
+    &-text {
+        text-align: center;
+        margin-bottom: 20px;
+        line-height: 1.5;
     }
 }
 
@@ -121,8 +145,8 @@ $text-color: #959eac;
 .attribution {
     font-size: 11px;
     text-align: center;
-}
 
-.attribution a {
-    color: #3e52a3;
+    & a {
+        color: #3e52a3;
+    }
 }
