@@ -9,21 +9,20 @@
       -ms-flex-pack: center;
           justify-content: center;
   margin: auto;
-  min-height: 250px;
-  min-width: 250px;
-  border: solid 1px red;
+  min-height: 550px;
+  min-width: 450px;
   background-color: #121417;
+  font-family: 'Overpass', sans-serif;
 }
 
 .rating-box {
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
-  padding: 20px;
+  padding: 25px;
   width: 375px;
   height: auto;
-  border: solid 1px blue;
-  border-radius: 15px;
-  background-color: #252d37;
+  border-radius: 25px;
+  background-color: #1C222C;
   color: #959eac;
 }
 
@@ -37,16 +36,28 @@
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  margin: 0 0 20px 0;
+  width: 50px;
+  height: 50px;
+  border-radius: 25px;
+  background-color: #262F39;
+}
+
+.rating-box-icon-img {
   width: 15px;
-  padding: 5px;
-  border-radius: 15px;
-  background-color: #7c8798;
+  height: 15px;
 }
 
 .rating-box-title {
-  margin: 15px 0 15px 0;
+  margin: 0 0 20px 0;
   font-weight: bold;
-  color: white;
+  color: #ffffff;
+}
+
+.rating-box-text {
+  margin: 0 0 20px 0;
+  line-height: 1.3;
+  font-size: 15px;
 }
 
 .rating-box-rating {
@@ -56,6 +67,7 @@
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
+  margin: 0 0 20px 0;
 }
 
 .rating-box-rating-note {
@@ -68,27 +80,40 @@
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  width: 25px;
-  margin-bottom: 10px;
-  padding: 5px;
+  width: 50px;
+  height: 50px;
   border-radius: 25px;
-  background-color: #7c8798;
+  background-color: #262F39;
+}
+
+.rating-box-rating-note:hover {
+  background-color: #fb7413;
+  color: #ffffff;
 }
 
 .rating-box-button {
   margin-top: 15px;
-  padding: 10px;
-  text-transform: uppercase;
+  padding: 15px;
   width: 100%;
   border: none;
   border-radius: 25px;
   background-color: #fb7413;
-  color: white;
+  text-transform: uppercase;
+  color: #ffffff;
+  letter-spacing: 3px;
 }
 
-p {
-  margin: 10px 0 15px 0;
-  line-height: 1.3;
-  font-size: 15px;
+.rating-box-button:hover {
+  background-color: #ffffff;
+  color: #fb7413;
+}
+
+.attribution {
+  font-size: 11px;
+  text-align: center;
+}
+
+.attribution a {
+  color: #3e52a3;
 }
 /*# sourceMappingURL=styles.css.map */

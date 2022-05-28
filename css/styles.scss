@@ -1,75 +1,128 @@
-$test-color: red;
-$second-test-color: blue;
-$third-test-color: green;
+$primary-bg: #121417;
+$box-bg: #1C222C;
+$div-bg: #262F39;
+$div-hover-bg: #7c8798;
+$button-bg: #fb7413;
+
+$title-color: #ffffff;
+$text-color: #959eac;
+
 
 #app {
     display: flex;
     align-items: center;
     justify-content: center;
     margin: auto;
-    min-height: 250px;
-    min-width: 250px;
-    border: solid 1px $test-color;
-    background-color: hsl(216, 12%, 8%);
+    min-height: 550px;
+    min-width: 450px;
+    background-color: $primary-bg;
+    font-family: 'Overpass', sans-serif;
 }
 
 .rating-box {
     box-sizing: border-box;
-    padding: 20px;
-    width: 375px;
+    padding: 25px;
+    min-width: 375px;
     height: auto;
-    border: solid 1px $second-test-color;
-    border-radius: 15px;
-    background-color: hsl(213, 19%, 18%);
-    color: hsl(217, 12%, 63%);
+    border-radius: 25px;
+    background-color: $box-bg;
+    color: $text-color;
 
     &-icon {
         display: flex;
         justify-content: center;
         align-items: center;
-        width: 15px;
-        padding: 5px;
-        // border: solid 1px $third-test-color;
-        border-radius: 15px;
-        background-color: hsl(216, 12%, 54%);
+        margin: 0 0 20px 0;
+        width: 50px;
+        height: 50px;
+        border-radius: 25px;
+        background-color: $div-bg;
+
+        &-img {
+            width: 15px;
+            height: 15px;
+        }
     }
 
     &-title {
-        margin: 15px 0 15px 0;
+        margin: 0 0 20px 0;
         font-weight: bold;
-        color: white;
+        color: $title-color;
+    }
+
+    &-text {
+        margin: 0 0 20px 0;
+        line-height: 1.3;
+        font-size: 15px;
     }
 
     &-rating {
         display: flex;
         justify-content: space-between;
+        margin: 0 0 20px 0;
 
         &-note {
             display: flex;
             justify-content: center;
             align-items: center;
-            width: 25px;
-            margin-bottom: 10px;
-            padding: 5px;
+            width: 50px;
+            height: 50px;
             border-radius: 25px;
-            background-color: hsl(216, 12%, 54%);
+            background-color: $div-bg;
+
+            &:hover {
+                background-color: $button-bg;
+                color: $title-color;
+            }
         }
     }
 
     &-button {
         margin-top: 15px;
-        padding: 10px;
-        text-transform: uppercase;
+        padding: 15px;
         width: 100%;
         border: none;
         border-radius: 25px;
-        background-color: hsl(25, 97%, 53%);
-        color: white;
+        background-color: $button-bg;
+        text-transform: uppercase;
+        color: $title-color;
+        letter-spacing: 3px;
+
+        &:hover {
+            background-color: $title-color;
+            color: $button-bg;
+        }
     }
 }
 
-p {
-    margin: 10px 0 15px 0;
-    line-height: 1.3;
-    font-size: 15px;
+.tyBox {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    box-sizing: border-box;
+    padding: 25px;
+    min-width: 375px;
+    height: auto;
+    border-radius: 25px;
+    background-color: $box-bg;
+    color: $text-color;
+
+    &-result {
+        height: 25px;
+        background-color: $div-bg;
+    }
+
+    &-titleTY {
+        text-transform: capitalize;
+    }
+}
+
+
+.attribution {
+    font-size: 11px;
+    text-align: center;
+}
+
+.attribution a {
+    color: #3e52a3;
 }
