@@ -72,7 +72,7 @@ body {
             border-radius: 25px;
             background-color: $green;
 
-            &.marked {
+            &--marked {
                 background-color: $red;
                 color: $title-color;
             }
@@ -100,11 +100,6 @@ body {
             color: $button-bg;
         }
     }
-}
-
-.marked {
-    background-color: blue;
-    color: $title-color;
 }
 
 .tyBox {
