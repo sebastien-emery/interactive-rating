@@ -39,18 +39,14 @@ const app = {
             className: 'rating-box-rating',
         });
         app.state.notes.forEach(number => {
-            let background; 
-            if (app.state.noteSelected === number) {
-                background = 'background-color: #7c8798;';
-            }
             const note = app.configureElement('div', rating, {
                 className: 'rating-box-rating-note',
                 textContent: number,
                 value: number,
-                style: background,
                 id: `note-${number}`,
             });
             // Je créé mes écouteurs sur chaques notes :
+            // note.addEventListener('click', app.handleNotedeselected);
             note.addEventListener('click', app.handleNoteSelected);
         });
         const button = app.configureElement('button', ratingBox, {
@@ -62,7 +58,6 @@ const app = {
         button.addEventListener('click', app.handleSubmit);
     },
 
-    
     createThankYouBox: function() {
         const tyBox = app.configureElement('section', app.containerElement, {
             className: 'tyBox',
@@ -86,13 +81,19 @@ const app = {
         })
     },
     
+    // handleNotedeselected: function() {
+    //     if (app.state.noteSelected !== null) {
+    //         const noteDeselected = document.querySelector(`#note-${app.state.noteSelected}`);
+    //         noteDeselected.className = 'rating-box-rating-note';
+    //     }
+    // },
     handleNoteSelected: function(e) {
         app.state.noteSelected = e.target.value;
         const allNote = document.querySelectorAll('.rating-box-rating-note');
         allNote.forEach(el => {
             el.style.background = '#262F39';
             el.style.color = '#959eac';
-        })
+        });
         const noteBG = document.getElementById(`note-${e.target.value}`);
         noteBG.style.background = '#7c8798';
         noteBG.style.color = 'white';

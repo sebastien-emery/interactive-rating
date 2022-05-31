@@ -1,7 +1,7 @@
 $primary-bg: #121417;
 $box-bg: #1C222C;
 $div-bg: #262F39;
-$div-hover-bg: #7c8798;
+$div-marked-bg: #7c8798;
 $button-bg: #fb7413;
 
 $title-color: #ffffff;
@@ -70,7 +70,12 @@ body {
             width: 50px;
             height: 50px;
             border-radius: 25px;
-            background-color: $div-bg;
+            background-color: $green;
+
+            &.marked {
+                background-color: $red;
+                color: $title-color;
+            }
 
             &:hover {
                 background-color: $button-bg;
@@ -95,6 +100,11 @@ body {
             color: $button-bg;
         }
     }
+}
+
+.marked {
+    background-color: blue;
+    color: $title-color;
 }
 
 .tyBox {
@@ -140,6 +150,7 @@ body {
         line-height: 1.5;
     }
 }
+
 
 
 .attribution {
