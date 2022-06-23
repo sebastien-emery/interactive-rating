@@ -28,7 +28,7 @@ Users should be able to:
 ### Screenshot
 
 ![Rating](./images/interactive-rating.png)
-![Thank you](./images/interactive-rating.png)
+![Thank you](./images/interactive-rating-thankyou.png)
 
 ### Links
 
